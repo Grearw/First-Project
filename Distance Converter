@@ -1,0 +1,87 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace Distance_Converter
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void convertButton_Click(object sender, EventArgs e)
+        {
+            double distance;
+            double convertedDistance = 0;
+
+            distance = double.Parse(distanceTextBox.Text);
+            
+
+            if (listBox1.SelectedIndex == 0)
+            {
+                if (listBox2.SelectedIndex == 0)
+                {
+                    convertedDistance = distance;
+                }
+                else if (listBox2.SelectedIndex == 1)
+                {
+                    convertedDistance = distance / 12;
+                }
+                else 
+                {
+                    convertedDistance = distance / 36;
+                }
+            }
+
+            if (listBox1.SelectedIndex == 1)
+            {
+                if (listBox2.SelectedIndex == 0)
+                {
+                    convertedDistance = distance * 12;
+                }
+                else if (listBox2.SelectedIndex == 1)
+                {
+                    convertedDistance = distance;
+                }
+                else 
+                {
+                    convertedDistance = distance / 3;
+                }
+            }
+
+            if (listBox1.SelectedIndex == 2)
+            {
+                if (listBox2.SelectedIndex == 0)
+                {
+                    convertedDistance = distance * 36;
+                }
+                else if (listBox2.SelectedIndex == 1)
+                {
+                    convertedDistance = distance * 3;
+                }
+                else
+                {
+                    convertedDistance = distance;
+                }
+            }
+            convertedDistanceLabel.Text = convertedDistance.ToString();
+        }
+    }
+}
