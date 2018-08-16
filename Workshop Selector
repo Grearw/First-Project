@@ -1,0 +1,97 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace Workshop_Selector
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void calculateButton_Click(object sender, EventArgs e)
+        {
+            double registration = 0, lodgingFee = 0, lodgingDays = 0, lodgingTotal = 0, total = 0;
+            
+            
+            if (workshopListBox.SelectedIndex == 0)
+            {
+                registration = 1000;
+                lodgingDays = 3;
+            }
+            if (workshopListBox.SelectedIndex == 1)
+            {
+                registration = 800;
+                lodgingDays = 3;
+            }
+            if (workshopListBox.SelectedIndex == 2)
+            {
+                registration = 1500;
+                lodgingDays = 3;
+            }
+            if (workshopListBox.SelectedIndex == 3)
+            {
+                registration = 1300;
+                lodgingDays = 5;
+            }
+            if (workshopListBox.SelectedIndex == 4)
+            {
+                registration = 500;
+                lodgingDays = 1;
+            }
+
+            if (locationListBox.SelectedIndex == 0)
+            {
+                lodgingFee = 150;
+            }
+            if (locationListBox.SelectedIndex == 1)
+            {
+                lodgingFee = 225;
+            }
+            if (locationListBox.SelectedIndex == 2)
+            {
+                lodgingFee = 175;
+            }
+            if (locationListBox.SelectedIndex == 3)
+            {
+                lodgingFee = 300;
+            }
+            if (locationListBox.SelectedIndex == 4)
+            {
+                lodgingFee = 175;
+            }
+            if (locationListBox.SelectedIndex == 5)
+            {
+                lodgingFee = 150;
+            }
+
+            lodgingTotal = lodgingDays * lodgingFee;
+            total = lodgingTotal + registration;
+
+            registrationLabel.Text = registration.ToString("c");
+            lodgingCostLabel.Text = lodgingTotal.ToString("c");
+            totalLabel.Text = total.ToString("c");
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            registrationLabel.Text = "";
+            lodgingCostLabel.Text = "";
+            totalLabel.Text = "";
+            workshopListBox.SelectedIndex = -1;
+            locationListBox.SelectedIndex = -1;
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
+}
