@@ -1,0 +1,130 @@
+using System;
+
+namespace Practice
+{
+    class MainClass
+    {
+        class Patient
+        {
+            private string _fname;
+            private string _lname;
+            private int _age;
+
+            public Patient()
+            {
+                _fname = "";
+                _lname = "";
+                _age = 0;
+            }
+
+
+            public string FName
+            {
+                get { return _fname; }
+                set { _fname = value; }
+            }
+
+            public string LName
+            {
+                get { return _lname; }
+                set { _lname = value; }
+            }
+        }
+
+        class Pet
+        {
+            private string _name;
+            private string _species;
+            private string _breed;
+            private int _age;
+
+            public Pet()
+            {
+                _name = "";
+                _species = "";
+                _breed = "";
+                _age = 0;
+            }
+
+            public string Name
+            {
+                get { return _name; }
+                set { _name = value; }
+            }
+
+            public string Species
+            {
+                get { return _species; }
+                set { _species = value; }
+            }
+
+            public string Breed
+            {
+                get { return _breed; }
+                set { _breed = value; }
+            }
+
+            public int Age
+            {
+                get { return _age; }
+                set { _age = value; }
+            }
+        }
+
+      
+
+        public static void Main(string[] args)
+        {
+            Patient Male = new Patient();
+            Patient Female = new Patient();
+            Male.FName = "Grear";
+            Male.LName = "Wilson";
+            Console.WriteLine("Male patient is named " + Male.FName + " " + Male.LName);
+            Female.FName = "Jenny";
+            Female.LName = "Mintz";
+            Console.WriteLine("Female patient is named " + Female.FName + " " + Female.LName);
+
+            Pet Otis = new Pet();
+            Pet Maggie = new Pet();
+            Pet Earth_Biscuit = new Pet();
+            Pet Sammy = new Pet();
+
+            Otis.Name = "Otis";
+            Otis.Species = "dog";
+            Otis.Breed = "Cattle dog";
+            Otis.Age = 12;
+
+            Maggie.Name = "Maggie";
+            Maggie.Species = "dog";
+            Maggie.Breed = "Rottweiler mix";
+            Maggie.Age = 3;
+
+            Earth_Biscuit.Name = "Earth Biscuit";
+            Earth_Biscuit.Species = "cat";
+            Earth_Biscuit.Breed = "Calico";
+            Earth_Biscuit.Age = 13;
+
+            Sammy.Name = "Sammy";
+            Sammy.Species = "cat";
+            Sammy.Breed = "Grey Tabby";
+            Sammy.Age = 9;
+
+            Console.WriteLine("They have 4 pets together and their names are " + " " + Otis.Name + ", " + Maggie.Name + ", " +
+                Earth_Biscuit.Name + ", and " + Sammy.Name);
+
+            Console.WriteLine(Otis.Name + " is a " + Otis.Species + ", his breed is " + Otis.Breed + " and he is " + Otis.Age
+               + " years old.");
+
+            Console.WriteLine(Maggie.Name + " is a " + Maggie.Species + ", her breed is " + Maggie.Breed + " and she is " + Maggie.Age
+                + " years old.");
+
+            Console.WriteLine(Earth_Biscuit.Name + " is a " + Earth_Biscuit.Species + ", her breed is " + Earth_Biscuit.Breed + 
+                " and she is " + Earth_Biscuit.Age + " years old.");
+
+            Console.WriteLine(Sammy.Name + " is a " + Sammy.Species + ", her breed is " + Sammy.Breed + " and she is " + Sammy.Age
+               + " years old.");
+
+            Console.ReadKey();
+        }
+    }
+}
